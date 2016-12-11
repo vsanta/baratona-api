@@ -1,5 +1,4 @@
 require "rails_helper"
-require "support/shared_example_commands_spec"
 
 describe "AuthenticateUser" do
   subject{ AuthenticateUser.call("test@example.com", "password") }

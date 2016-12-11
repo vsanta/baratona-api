@@ -1,5 +1,4 @@
 require "rails_helper"
-require "support/indifferent_access_matcher"
 
 describe "JsonWebToken" do
 
