@@ -15,7 +15,7 @@ RSpec.describe EventsController, type: :controller do
       post :create, params: { name: "Jesusmar's Birthday",
         description: "Come join me to My brirthay barathon!!",
         date:"01/01/2012 23:59:00",
-        base_location:"the double windsor",user_id:user.id}
+        base_location:"the double windsor",email:user.email}
         expect(response).to have_http_status 200
     end
 
@@ -28,7 +28,7 @@ RSpec.describe EventsController, type: :controller do
         post :create, params: { name: "Jesusmar's Birthday",
           description: "Come join me to My brirthay barathon!!",
           date:"45/45/2012 23:59:00",
-          base_location:"the double windsor",user_id:user.id}
+          base_location:"the double windsor",email:user.email}
             expect(response).to have_http_status 400
     end
   end
@@ -38,7 +38,7 @@ RSpec.describe EventsController, type: :controller do
       post :create, params: { name: "Jesusmar's Birthday",
         description: "Come join me to My brirthay barathon!!",
         date:"01/01/2012 23:59:00",
-        base_location:"the double windsor",user_id:user.id}
+        base_location:"the double windsor",email:user.email}
         expect(response).to have_http_status 401
     end
   end

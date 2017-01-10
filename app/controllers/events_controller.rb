@@ -7,7 +7,7 @@ class EventsController < ApplicationController
       return render json: {errors: ["date or time invalid!"]}, status: 400
     end
 
-    @user = User.find_by_id(params[:user_id])
+    @user = User.find_by_email(params[:email])
     @event = Event.new(name: params[:name],
                        description:params[:description],
                        date:date.to_datetime,
