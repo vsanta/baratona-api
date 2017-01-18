@@ -3,7 +3,7 @@ require 'open-uri'
 module GooglePlaceApi
 
   def self.get_Key
-     return ENV["google_place_api_key"]
+     return ENV["GOOGLE_PLACE_API_KEY"]
   end
 
   def self.get_sample
