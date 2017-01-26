@@ -13,6 +13,7 @@ module GooglePlaceApi
   end
 
   def self.search_by_radius(location,radius)
+    byebug
     radius_url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+ location +"&radius=" + radius + "&types=bar&key="+ get_Key
     body = open(radius_url).read
     parse(body)
