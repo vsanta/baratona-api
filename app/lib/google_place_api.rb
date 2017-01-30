@@ -7,13 +7,12 @@ module GooglePlaceApi
   end
 
   def self.search_by_text(text_to_search)
-    place_url="https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + text_to_search + "&key="+ get_Key
+    place_url="https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + text_to_search + "&key="+ get_Key + "&types=bar"
     body = open(place_url).read
     parse(body)
   end
 
   def self.search_by_radius(location,radius)
-    byebug
     radius_url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+ location +"&radius=" + radius + "&types=bar&key="+ get_Key
     body = open(radius_url).read
     parse(body)
