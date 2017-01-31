@@ -6,13 +6,8 @@ module GooglePlaceApi
      return ENV["GOOGLE_PLACE_API_KEY"]
   end
 
-  def self.get_sample
-    place_url="https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + "pizza in new york"+ "&key="+ get_Key
-    body = open(place_url).read
-  end
-
   def self.search_by_text(text_to_search)
-    place_url="https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + text_to_search + "&key="+ get_Key
+    place_url="https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + text_to_search + "&key="+ get_Key + "&types=bar"
     body = open(place_url).read
     parse(body)
   end

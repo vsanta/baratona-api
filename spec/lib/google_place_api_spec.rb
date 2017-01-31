@@ -7,11 +7,6 @@ describe "google_place_api" do
       expect(GooglePlaceApi.get_Key).to_not be_nil
     end
 
-    it 'returns some JSON' do
-      result = GooglePlaceApi.get_sample
-      expect(result).to_not be_nil
-    end
-
   end
 
   describe 'bussiness tests' do
