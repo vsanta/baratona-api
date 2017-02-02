@@ -1,5 +1,11 @@
 class EventsController < ApplicationController
 
+  def index
+      @events = User.find_by_email(params[:email]).events
+      render json: {events: @events}
+  end
+
+
   def create
     begin
       date = params[:date].to_datetime
@@ -19,5 +25,6 @@ class EventsController < ApplicationController
       render json: {errors: @event.errors.full_messages}, status: 400
     end
   end
+
 
 end

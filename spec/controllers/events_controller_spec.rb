@@ -10,6 +10,11 @@ RSpec.describe EventsController, type: :controller do
       request.headers.merge!("authorization"  => token)
     end
 
+    it "returns all events from user" do
+      get :index, params: {email:"jesusmarlima@gmail.com"}
+      expect(response).to have_http_status 200
+    end
+
     it "Post, given correct parameters, should succeed" do
 
       post :create, params: { name: "Jesusmar's Birthday",
